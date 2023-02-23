@@ -1,0 +1,105 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "CRUD API"
+  description: "API for performing CRUD operations on items"
+basePath: "/api"
+schemes:
+  - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+paths:
+  /items:
+    get:
+      tags:
+        - "Items"
+      summary: "Get all items"
+      description: "Returns all items in the database"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Item"
+    post:
+      tags:
+        - "Items"
+      summary: "Add a new item"
+      description: "Creates a new item in the database"
+      parameters:
+        - in: "body"
+          name: "item"
+          description: "Item object"
+          required: true
+          schema:
+            $ref: "#/definitions/Item"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Item"
+  /items/{id}:
+    parameters:
+      - in: "path"
+        name: "id"
+        description: "ID of the item to retrieve or update"
+        required: true
+        type: "string"
+    get:
+      tags:
+        - "Items"
+      summary: "Get an item by ID"
+      description: "Returns an item with the specified ID"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Item"
+    put:
+      tags:
+        - "Items"
+      summary: "Update an item by ID"
+      description: "Updates an item with the specified ID"
+      parameters:
+        - in: "body"
+          name: "item"
+          description: "Item object"
+          required: true
+          schema:
+            $ref: "#/definitions/Item"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Item"
+    delete:
+      tags:
+        - "Items"
+      summary: "Delete an item by ID"
+      description: "Deletes an item with the specified ID"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Item"
+definitions:
+  Item:
+    type: "object"
+    required:
+      - "name"
+      - "price"
+      - "description"
+    properties:
+      _id:
+        type: "string"
+      name:
+        type: "string"
+      price:
+        type: "number"
+      description:
+        type: "string"
+
+

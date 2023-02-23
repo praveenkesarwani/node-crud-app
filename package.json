@@ -1,0 +1,29 @@
+{
+  "name": "node-crud-app",
+  "version": "1.0.0",
+  "description": "Node.js CRUD app with MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --timeout 10000"
+  },
+  "keywords": [
+    "Node.js",
+    "MongoDB",
+    "CRUD"
+  ],
+  "author": "Praveen Kesarwani",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.2.2",
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.2",
+    "supertest": "^6.2.2"
+  }
+}
