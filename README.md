@@ -1,6 +1,6 @@
-# Step1
+## Step1
 npm install
-# start the server
+## start the server
 npm start
-# Test
+## Test
 npm test
